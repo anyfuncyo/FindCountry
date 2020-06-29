@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l4C-FW-tvT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search Page Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SearchPageController" customModule="FindCountry" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find a country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DA-2T-vC4">
+                                <rect key="frame" x="120" y="168" width="174" height="32"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Put down a country name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZIX-te-D6x">
+                                <rect key="frame" x="57" y="230" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GIQ-Ng-W8z"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="fNU-1e-Tkh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69Y-Tx-9wa">
+                                <rect key="frame" x="183" y="300" width="48" height="30"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="goToResult:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0CL-e9-YCf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7DA-2T-vC4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="4mH-6R-BbM"/>
+                            <constraint firstItem="69Y-Tx-9wa" firstAttribute="top" secondItem="ZIX-te-D6x" secondAttribute="bottom" constant="30" id="JTK-x2-j1v"/>
+                            <constraint firstItem="ZIX-te-D6x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jym-VM-UZZ"/>
+                            <constraint firstItem="7DA-2T-vC4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PjE-rn-obQ"/>
+                            <constraint firstItem="69Y-Tx-9wa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kE9-iX-ruI"/>
+                            <constraint firstItem="ZIX-te-D6x" firstAttribute="top" secondItem="7DA-2T-vC4" secondAttribute="bottom" constant="30" id="mvi-Cc-lFn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rPH-jD-akO"/>
+                    <connections>
+                        <outlet property="countryTextField" destination="ZIX-te-D6x" id="wdc-hT-346"/>
+                        <outlet property="searchButton" destination="69Y-Tx-9wa" id="KpL-jF-vcA"/>
+                        <segue destination="bns-QM-aio" kind="push" identifier="showResult" id="tMW-jP-joY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="133.92857142857142"/>
+        </scene>
+        <!--Result Page Controller-->
+        <scene sceneID="V6d-Qk-y64">
+            <objects>
+                <viewController id="bns-QM-aio" customClass="ResultPageController" customModule="FindCountry" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AHi-O8-5FG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="7hg-bj-6xq">
+                                <rect key="frame" x="40" y="238" width="109" height="97.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEn-Bu-za6">
+                                        <rect key="frame" x="0.0" y="0.0" width="105.5" height="18.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capital:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQm-R5-PIX">
+                                        <rect key="frame" x="0.0" y="39.5" width="54.5" height="18.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brR-b2-R0l">
+                                        <rect key="frame" x="0.0" y="79" width="67" height="18.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="xPJ-3N-pfF">
+                                <rect key="frame" x="184" y="238" width="190" height="124"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABc-3F-o3x">
+                                        <rect key="frame" x="0.0" y="0.0" width="190" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="190" id="ial-WL-ZZc"/>
+                                            <constraint firstAttribute="height" constant="20" id="nus-2t-Cnf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bnj-MX-24S">
+                                        <rect key="frame" x="0.0" y="37" width="190" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="wb9-Cy-Mbj"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="190" id="xFa-kN-aBY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAS-iV-Nb2">
+                                        <rect key="frame" x="0.0" y="74" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xPJ-3N-pfF" firstAttribute="top" secondItem="kPc-qA-xKq" secondAttribute="top" constant="150" id="37c-7k-TNc"/>
+                            <constraint firstItem="xPJ-3N-pfF" firstAttribute="leading" secondItem="AHi-O8-5FG" secondAttribute="leading" constant="184" id="4sQ-cQ-mTd"/>
+                            <constraint firstItem="7hg-bj-6xq" firstAttribute="top" secondItem="kPc-qA-xKq" secondAttribute="top" constant="150" id="Y0P-h2-Le6"/>
+                            <constraint firstItem="7hg-bj-6xq" firstAttribute="leading" secondItem="kPc-qA-xKq" secondAttribute="leading" constant="40" id="rzd-f1-ur9"/>
+                            <constraint firstItem="kPc-qA-xKq" firstAttribute="trailing" secondItem="xPJ-3N-pfF" secondAttribute="trailing" constant="40" id="xhy-zx-Czm"/>
+                            <constraint firstItem="xPJ-3N-pfF" firstAttribute="leading" secondItem="7hg-bj-6xq" secondAttribute="trailing" constant="35" id="yg0-Ca-chk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kPc-qA-xKq"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="VJP-L3-BRV"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="capitalName" destination="Bnj-MX-24S" id="TcH-cT-Mhh"/>
+                        <outlet property="countryName" destination="ABc-3F-o3x" id="xL1-YM-SwQ"/>
+                        <outlet property="currencyName" destination="eAS-iV-Nb2" id="HRS-5X-bU3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ky4-6f-Qu9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1913.0434782608697" y="131.91964285714286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="t2F-Sc-8WO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l4C-FW-tvT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pxA-Hw-SZc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="IkE-bu-Fhw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BJm-yi-ee4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
+        </scene>
+    </scenes>
+</document>

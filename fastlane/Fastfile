@@ -1,0 +1,10 @@
+fastlane_version"2.149.1"
+
+lane :UItests do
+  run_tests(workspace: "FindCountry.xcworkspace",
+            scheme:"FindCountryUITests",
+            clean: true,
+            devices: ["iPhone 8"])
+end
+
+

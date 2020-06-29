@@ -1,0 +1,20 @@
+PODS:
+  - ObjectMapper (4.2.0)
+  - Swifter (1.4.7)
+
+DEPENDENCIES:
+  - ObjectMapper (~> 4.2)
+  - Swifter (~> 1.4.7)
+
+SPEC REPOS:
+  trunk:
+    - ObjectMapper
+    - Swifter
+
+SPEC CHECKSUMS:
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  Swifter: 2327ef5d872c638aebab79646ce494af508b0c8f
+
+PODFILE CHECKSUM: 47f2204adfdf8b3d62d767e41d12405701e29db9
+
+COCOAPODS: 1.9.3

@@ -1,0 +1,6 @@
+framework module Pods_FindCountry_FindCountryUITests {
+  umbrella header "Pods-FindCountry-FindCountryUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
