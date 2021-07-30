@@ -24,6 +24,7 @@ final class SearchCountryTests: UITestSetUp, InteractionContext, MockServerServi
         assertMatch(text: "Norvège", in: resultScreen.countryNameLabel)
         assertMatch(text: "Oslo", in: resultScreen.capitalLabel)
         assertMatch(text: "NOK", in: resultScreen.currencyLabel)
+        takeScreenshot(named: "Norway")
     }
     
     func test_searchResultNotFound(){
@@ -32,6 +33,7 @@ final class SearchCountryTests: UITestSetUp, InteractionContext, MockServerServi
         type(text: "on99", into: searchScreen.textFields)
         tap(searchScreen.button)
         alertShows(badRequestAlert.id, closeAlert: badRequestAlert.dismissButton)
+        takeScreenshot(named: "Bad Request")
     }
     
     func test_searchUnauthorized(){

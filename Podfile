@@ -15,7 +15,7 @@ pod 'ObjectMapper','~>4.2'
   end
 
   target 'FindCountryUITests' do
-    pod 'Swifter','~>1.4.7'
+    pod 'Swifter','~>1.5.0'
   end
 
 end
